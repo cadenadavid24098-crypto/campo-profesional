@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Página personal de David, estudiante de ULSA y orgulloso integrante del pueblo Rarámuri.">
+<title>David | Mi página personal</title>
+
+<style>
+:root {
+    --fondo: #071629;
+    --azul: #1688e8;
+    --azul-claro: #8bcaff;
+    --texto: #eef6ff;
+    --secundario: #a9bfd5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* NAVEGACIÓN */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(5, 18, 33, .9);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #24496b;
+}
+
+nav {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: var(--azul-claro);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--secundario);
+    text-decoration: none;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--azul-claro);
+}
+
+/* INICIO */
+
+.hero {
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    align-items: center;
+    gap: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 85px);
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: var(--azul-claro);
+}
+
+.hero p {
+    margin: 25px 0;
+    color: var(--secundario);
+    font-size: 18px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #1688e8, #2465c5);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.boton:hover {
+    transform: translateY(-4px);
+}
+
+.presentacion {
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #315779;
+    border-radius: 25px;
+    background: linear-gradient(145deg,
+        rgba(37,112,180,.3),
+        rgba(8,28,49,.7));
+}
+
+.inicial {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 75px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #1688e8, #071629);
+    border: 2px solid var(--azul-claro);
+}
+
+/* SECCIONES */
+
+section {
+    padding: 75px 0;
+}
+
+.titulo {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.descripcion {
+    color: var(--secundario);
+    margin-bottom: 30px;
+}
+
+.tarjeta {
+    background: rgba(15,42,70,.65);
+    border: 1px solid rgba(123,190,255,.2);
+    border-radius: 20px;
+    padding: 30px;
+    transition: .3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    border-color: var(--azul);
+}
+
+.tarjeta p {
+    color: var(--secundario);
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.icono {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin-bottom: 12px;
+}
+
+/* CULTURA */
+
+.cultura {
+    background: linear-gradient(120deg,
+        rgba(14,61,101,.85),
+        rgba(8,29,51,.9));
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #315779;
+}
+
+.cultura p {
+    color: #c1d5e8;
+    margin-bottom: 15px;
+}
+
+.frase {
+    color: var(--azul-claro);
+    font-weight: bold;
+    border-left: 3px solid var(--azul);
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+/* GITHUB */
+
+.github {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #24496b;
+    color: var(--secundario);
+}
+
+/* CELULARES */
+
+@media(max-width: 800px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 550px) {
+    nav {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .github {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENÚ -->
+
+<header>
+<div class="container">
+<nav>
+    <div class="logo">DAVID<span>.</span></div>
+
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#intereses">Intereses</a></li>
+        <li><a href="#aprender">Aprender</a></li>
+        <li><a href="#cultura">Mi cultura</a></li>
+        <li><a href="#github">GitHub</a></li>
+    </ul>
+</nav>
+</div>
+</header>
+
+<!-- INICIO -->
+
+<main>
+
+<section class="container hero" id="inicio">
+
+<div>
+    <p style="color:#8bcaff;">BIENVENIDO A MI ESPACIO PERSONAL</p>
+
+    <h1>Hola, soy <span>David.</span></h1>
+
+    <p>
+        Soy estudiante de ULSA, pertenezco al pueblo
+        Rarámuri y soy originario de la Sierra Tarahumara.
+        Este es un espacio donde comparto mi historia,
+        mis intereses y mis metas.
+    </p>
+
+    <a href="#sobre-mi" class="boton">Conóceme</a>
+</div>
+
+<div class="presentacion">
+    <div class="inicial">D.</div>
+</div>
+
+</section>
+
+<!-- SOBRE MÍ -->
+
+<section class="container" id="sobre-mi">
+
+    <h2 class="titulo">Sobre mí</h2>
+
+    <p class="descripcion">
+        Conoce un poco sobre mi historia y mis raíces.
+    </p>
+
+    <div class="tarjeta">
+        <p>
+            Mi nombre es David. Actualmente soy estudiante
+            de ULSA y pertenezco al pueblo Rarámuri.
+
+            Soy originario de la Sierra Tarahumara,
+            un lugar que forma parte de mi identidad
+            y de mis raíces.
+
+            Me interesa seguir aprendiendo, descubrir
+            nuevas oportunidades y utilizar mis conocimientos
+            para crear proyectos que ayuden a mi comunidad.
+        </p>
+    </div>
+
+</section>
+
+<!-- INTERESES -->
+
+<section class="container" id="intereses">
+
+    <h2 class="titulo">Mis intereses</h2>
+
+    <p class="descripcion">
+        Algunas de las cosas que me apasionan.
+    </p>
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+            <div class="icono">💻</div>
+            <h3>Tecnología</h3>
+            <p>
+                Me interesa conocer cómo funciona
+                la tecnología y cómo puede ayudar
+                a resolver problemas.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <div class="icono">⌨️</div>
+            <h3>Programación</h3>
+            <p>
+                Quiero aprender a crear páginas web,
+                aplicaciones y herramientas digitales.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <div class="icono">📚</div>
+            <h3>Educación</h3>
+            <p>
+                Creo que aprender abre oportunidades
+                y permite compartir conocimientos.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LO QUE QUIERO APRENDER -->
+
+<section class="container" id="aprender">
+
+    <h2 class="titulo">Lo que quiero aprender</h2>
+
+    <p class="descripcion">
+        Mis metas para crecer académica y profesionalmente.
+    </p>
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+            <div class="icono">🌐</div>
+            <h3>Desarrollo web</h3>
+            <p>
+                Aprender HTML, CSS y JavaScript
+                para desarrollar páginas modernas.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <div class="icono">🖥️</div>
+            <h3>Ingeniería en sistemas</h3>
+            <p>
+                Comprender mejor las computadoras,
+                los programas y las redes.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <div class="icono">📱</div>
+            <h3>Aplicaciones</h3>
+            <p>
+                Aprender a desarrollar aplicaciones
+                que puedan ser útiles para las personas.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CULTURA RARÁMURI -->
+
+<section class="container" id="cultura">
+
+    <h2 class="titulo">Mi cultura Rarámuri</h2>
+
+    <div class="cultura">
+
+        <p>
+            Ser parte del pueblo Rarámuri es una parte
+            importante de quién soy.
+
+            Mi origen está en la Sierra Tarahumara,
+            una región reconocida por sus montañas,
+            comunidades y riqueza cultural.
+        </p>
+
+        <p>
+            Nuestra lengua, nuestras tradiciones,
+            nuestros conocimientos y nuestra historia
+            son valiosos y merecen seguir transmitiéndose
+            a las nuevas generaciones.
+        </p>
+
+        <p>
+            Me gustaría que la tecnología también
+            fuera una herramienta para preservar
+            y difundir la lengua y cultura Rarámuri,
+            siempre con respeto a nuestras comunidades.
+        </p>
+
+        <div class="frase">
+            Mis raíces son parte de mi historia
+            y también de mi futuro.
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GITHUB -->
+
+<section class="container" id="github">
+
+    <h2 class="titulo">Mi GitHub</h2>
+
+    <div class="tarjeta github">
+
+        <div>
+            <h3>Mis proyectos tecnológicos</h3>
+            <p>
+                Aquí quiero compartir mis proyectos,
+                prácticas y aprendizajes.
+            </p>
+        </div>
+
+        <a href="https://github.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="boton">
+           Visitar GitHub ↗
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+    <p>© 2026 David | Mi página personal</p>
+    <p>Hecho con HTML y CSS</p>
+</footer>
+
+</body>
+</html>
